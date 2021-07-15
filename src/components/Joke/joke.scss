@@ -1,0 +1,35 @@
+@import '../../styleGuide/styleGuide.scss';
+
+.contain {
+  height: 374px;
+  margin: 6rem 0;
+
+  .joke {
+    @include h5;
+    
+    background: map-get($colors, white);
+
+    display: flex;
+    padding: 1rem 2rem;
+    border-radius: 10px 10px 10px 0px;
+    
+    transition: 0.15s;
+    
+    @media (min-width: 768px) {
+      @include h4;
+    }
+
+    @media (min-width: 992px) {
+        @include h3;
+        padding: 2rem 3rem;
+      }
+
+    @media (min-width: 1400px) {
+      @include h1;
+    }
+  }
+
+  img {
+    margin-top: -0.8rem;
+  }
+}

@@ -1,0 +1,115 @@
+// https://stackoverflow.com/questions/38968129/how-to-write-variable-with-multiple-css-properties-in-sass
+//https://gist.github.com/fabricelejeune/bcdd3d4725d4e4cea672
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Slab&display=swap');
+
+// Colors ******************************************************
+
+$colors: (
+  primary: linear-gradient(
+      103.92deg, rgba(153, 203, 253, 0.9405) -10.35%, rgba(118, 166, 214, 0.9801) 111.83%
+    ),
+  black: rgba(24, 5, 5, 0.95),
+  white: #ffffff,
+);
+
+// Typography **************************************************
+
+$fonts: (
+  pacifico: (Pacifico, cursive), 
+  roboto: (Roboto Slab, serif),
+);
+
+/* 
+$sizes: (
+  h1: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+
+  h2: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+  
+  h3: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+  
+  h4: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+  
+  h5: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+  
+  h6: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ),
+  
+  p: (
+    size: 60px,
+    line: 140%,
+    letter: 0.01em,
+  ), 
+);
+ */
+
+@mixin typography($size, $color, $font) {
+  font-size: $size;
+  color: map-get($colors, $color);
+  font-family: map-get($fonts, $font);
+}
+
+@mixin h1 {
+  @include typography(60px, black, pacifico);
+  line-height: 140%; 
+  letter-spacing: 0.01em;
+}
+
+@mixin h2 {
+  @include typography(60px - (8 * 1), black, pacifico);
+  line-height: 150%;
+  letter-spacing: 0.03em;
+}
+
+@mixin h3 {
+  @include typography(60px - (8 * 2), black, pacifico);
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin h4 {
+  @include typography(60px - (8 * 3), black, pacifico);
+  line-height: 180%;
+  letter-spacing: 0.06em;
+}
+
+@mixin h5 {
+  @include typography(60px - (8 * 4), black, pacifico);
+  line-height: 160%;
+  letter-spacing: 0.06em;
+}
+
+@mixin h6 {
+  @include typography(60px - (8 * 5), black, pacifico);
+  line-height: 180%;
+  letter-spacing: 0.06em;
+}
+
+@mixin p {
+  @include typography(60px - (8 * 5) - 4, white, roboto);
+  line-height: 180%;
+  letter-spacing: 0.04em;
+}

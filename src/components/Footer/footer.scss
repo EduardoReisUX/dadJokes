@@ -1,0 +1,13 @@
+@import '../../styleGuide/styleGuide.scss';
+
+.footer {
+  @include p;
+  
+  background: map-get($colors, black);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 1rem;
+}
